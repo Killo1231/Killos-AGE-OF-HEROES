@@ -19,7 +19,7 @@ Basically Sage's Script But I added more options
 ]]--
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
-local Window = Library.CreateLib("Killos Age Of Heroes GUI", "DarkTheme");
+local Window = Library.CreateLib("TheFartMan GUI - Age Of Heroes", "Ocean");
 local Tab = Window:NewTab("AutoFarm Menu");
 local MainSection = Tab:NewSection("AutoFarm Menu");
 local TargetTab = Window:NewTab("Player Menu");
@@ -520,14 +520,25 @@ TSection:NewButton("Motel Out Of Zone", "", function()
 	end
 	breakvelocity();
 end);
-TSection:NewButton("Teleport In building", "", function()
+TSection:NewButton("Jail", "", function()
     if (_G.bring == true) then
 	    game:GetService("Workspace")[_G.teleportplayer].HumanoidRootPart.telekinesisPosition:Destroy()
-        game:GetService("Workspace")[_G.teleportplayer].HumanoidRootPart.CFrame = CFrame.new(-492, 96, -96);
+        game:GetService("Workspace")[_G.teleportplayer].HumanoidRootPart.CFrame = CFrame.new(-706, 91, -288);
         wait(0.2)
         game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[_G.teleportplayer].Character);
 	else
-	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2669, 165, -3001);
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-706, 91, -288);
+	end
+	breakvelocity();
+end);
+TSection:NewButton("Box Near To Motel", "", function()
+    if (_G.bring == true) then
+	    game:GetService("Workspace")[_G.teleportplayer].HumanoidRootPart.telekinesisPosition:Destroy()
+        game:GetService("Workspace")[_G.teleportplayer].HumanoidRootPart.CFrame = CFrame.new(-1695, 94, -1309);
+        wait(0.2)
+        game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[_G.teleportplayer].Character);
+	else
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1695, 94, -1309);
 	end
 	breakvelocity();
 end);
